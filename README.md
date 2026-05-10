@@ -44,3 +44,7 @@ pytest
 The full course lives at [git-lessons](https://github.com/paulieb89/bouch-test/blob/main/docs/git-lessons/00-overview.md).
 
 Each lesson adds one command or fixes one bug. By Lesson 6, an AI agent is opening PRs using the same workflow you've been practicing.
+
+
+
+this is a change 
