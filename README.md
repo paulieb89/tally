@@ -9,6 +9,26 @@ tally show             # print all counters
 
 ## Setup
 
+**With uv (recommended):**
+
+```bash
+# 1. Fork this repo on GitHub
+
+# 2. Clone your fork
+git clone https://github.com/YOUR_USERNAME/tally.git
+cd tally
+
+# 3. Install
+uv sync --extra dev
+
+# 4. Check it works
+uv run tally add tasks
+uv run tally show
+uv run pytest
+```
+
+**With pip:**
+
 ```bash
 # 1. Fork this repo on GitHub
 
@@ -35,16 +55,11 @@ tally show
 pytest
 ```
 
-> The venv must be active whenever you use `tally` or run tests.
-> You'll know it's active when you see `(.venv)` at the start of your terminal prompt.
-> To reactivate in a new terminal: run the `activate` command from step 3 again.
+> pip users: keep the venv active whenever you use `tally`. You'll see `(.venv)` in your prompt when it is.
+> New terminal? Run the `activate` command again before starting.
 
 ## The lessons
 
 The full course lives at [git-lessons](https://github.com/paulieb89/bouch-test/blob/main/docs/git-lessons/00-overview.md).
 
 Each lesson adds one command or fixes one bug. By Lesson 6, an AI agent is opening PRs using the same workflow you've been practicing.
-
-
-
-this is a change 
