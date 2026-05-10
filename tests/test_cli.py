@@ -32,6 +32,20 @@ def test_show_lists_counters(runner):
     assert "bugs: 1" in result.output
 
 
+def test_reset_zeroes_counter(runner):
+    runner.invoke(cli, ["add", "tasks"])
+    runner.invoke(cli, ["add", "tasks"])
+    result = runner.invoke(cli, ["reset", "tasks"])
+    assert result.exit_code == 0
+    assert "tasks: 0" in result.output
+
+
+def test_reset_on_unknown_counter(runner):
+    result = runner.invoke(cli, ["reset", "tasks"])
+    assert result.exit_code == 0
+    assert "tasks: 0" in result.output
+
+
 def test_show_crashes_when_no_counters_exist(runner):
     # Bug: show raises FileNotFoundError on a fresh system.
     # Fix is to handle the missing-store case gracefully.
