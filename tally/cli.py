@@ -47,3 +47,16 @@ def show():
         return
     for name, count in data.items():
         click.echo(f"{name}: {count}")
+
+
+@cli.command()
+@click.argument("name")
+def reset(name):
+    """Reset NAME to zero."""
+    try:
+        data = _load()
+    except FileNotFoundError:
+        data = {}
+    data[name] = 0
+    _save(data)
+    click.echo(f"{name}: 0")
